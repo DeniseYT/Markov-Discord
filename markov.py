@@ -1,7 +1,26 @@
 """A Markov chain generator that can tweet random messages."""
-
+import os
+import discord
 import sys
 from random import choice
+
+client = discord.Client()
+
+
+@client.event
+async def on_ready():
+    print(f'Successfully connected! Logged in as {client.user}.')
+
+
+@client.event
+async def on_message(message):
+    if message.author == client.user:
+        return
+
+    # TODO: replace this with your code
+
+
+client.run('replace this with your token from secrets.sh')
 
 
 def open_and_read_file(filenames):
